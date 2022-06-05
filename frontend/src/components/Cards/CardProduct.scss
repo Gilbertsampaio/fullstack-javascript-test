@@ -1,0 +1,47 @@
+.product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: .25rem;
+    background-color: #F2F3F4;
+
+    .details {
+        display: flex;
+        flex-direction: column;
+        gap: .25rem;
+
+        .name {
+            font-size: 1.25rem;
+        }
+
+        .price {
+            margin-top: .5rem;
+            font-weight: 700;
+        }
+
+    }
+
+    .actions {
+        display: flex;
+        gap: .5rem;
+
+        button {
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            font-size: 1.5rem;
+            transition: filter 0.2s;
+
+            &:hover {
+                filter: brightness(0.9);
+            }
+        }
+
+        .deleteProduct {
+            color: #E74C3C;
+        }
+
+    }
+
+}

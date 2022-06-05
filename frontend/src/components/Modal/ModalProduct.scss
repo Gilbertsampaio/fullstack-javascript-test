@@ -1,0 +1,19 @@
+.formProduct {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+    }
+
+    input, textarea {
+        font-size: 1rem;
+        padding: .5rem;
+        border-radius: .25rem;
+        border: 1px solid #e1e1e1;
+    }
+
+}
