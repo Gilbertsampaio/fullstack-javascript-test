@@ -1,0 +1,30 @@
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: #33cc95;
+    margin: 0;
+    color: #fff;
+
+    .rodape {
+        padding: 20px;
+
+        a {
+            position: absolute;
+            right: 20px;
+            color: #2980b9;
+            text-decoration: none;
+            transition: all .3s ease;
+
+            svg {
+                font-size: 20px;
+                margin-bottom: -3px;
+            }
+
+            &:hover {
+                color: #0f476d;
+                transition: all .3s ease;
+            }
+        }
+    }
+}

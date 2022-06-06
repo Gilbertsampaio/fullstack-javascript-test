@@ -1,3 +1,4 @@
+import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import ListProducts from "./components/List/ListProducts";
 import { ModalProduct } from "./components/Modal/ModalProduct";
@@ -9,10 +10,9 @@ function App() {
 	return (
 		<ModalProvider>
 			<ProductsProvider>
-				
-					<Header />
-					<ListProducts />
-				
+				<Header />
+				<ListProducts />
+				<Footer />
 				<ModalProduct />
 			</ProductsProvider>
 		</ModalProvider>
