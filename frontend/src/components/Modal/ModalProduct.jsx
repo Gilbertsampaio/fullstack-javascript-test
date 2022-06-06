@@ -50,6 +50,11 @@ export function ModalProduct() {
             setName(name);
             setDescription(description);
             setPrice(price);
+        } else {
+            setId(null);
+            setName("");
+            setDescription("");
+            setPrice("");
         }
     }
 
