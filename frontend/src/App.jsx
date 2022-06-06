@@ -9,10 +9,10 @@ function App() {
 	return (
 		<ModalProvider>
 			<ProductsProvider>
-				<div className="container">
+				
 					<Header />
 					<ListProducts />
-				</div>
+				
 				<ModalProduct />
 			</ProductsProvider>
 		</ModalProvider>

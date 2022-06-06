@@ -78,9 +78,9 @@ export function ModalProduct() {
                 <h2>{id ? "Editar" : "Cadastrar"} Produto</h2>
 
                 <div className="form-group">
-                    <label htmlFor="name">Nome</label>
                     <input
                         id="name"
+                        placeholder="Nome"
                         value={name}
                         onChange={event => setName(event.target.value)}
                         required
@@ -88,12 +88,10 @@ export function ModalProduct() {
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="description">Descrição</label>
-                    <textarea id="description" value={description} rows="3" onChange={event => setDescription(event.target.value)} required />
+                    <textarea id="description" placeholder="Descrição" value={description} rows="5" onChange={event => setDescription(event.target.value)} required />
                 </div>
 
                 <div className="form-group">
-                    <label htmlFor="description">Preço (R$)</label>
                     <input
                         placeholder="0,00"
                         type="number"

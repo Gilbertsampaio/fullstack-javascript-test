@@ -1,13 +1,9 @@
 .product {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     padding: 1rem;
     border-radius: .25rem;
     background-color: #F2F3F4;
     transition: all .3s ease;
     cursor: pointer;
-    box-shadow: 3px 3px 3px #ccc;
 
     &:hover {
         background-color: #e8e1e1;
@@ -38,28 +34,27 @@
         }
 
     }
+}
 
-    .actions {
-        display: flex;
-        gap: .5rem;
+.actions {
+    display: flex;
+    gap: .5rem;
 
-        button {
-            cursor: pointer;
-            background: transparent;
-            border: none;
-            font-size: 1.5rem;
-            transition: filter 0.2s;
-            color: #1e4bb6;
+    button {
+        cursor: pointer;
+        background: transparent;
+        border: none;
+        font-size: 1.5rem;
+        transition: filter 0.2s;
+        color: #1e4bb6;
 
-            &:hover {
-                filter: brightness(0.7);
-            }
+        &:hover {
+            filter: brightness(0.7);
         }
+    }
 
-        .deleteProduct {
-            color: #E74C3C;
-        }
-
+    .deleteProduct {
+        color: #E74C3C;
     }
 
 }

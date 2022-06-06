@@ -2,18 +2,39 @@
 
 * {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
 }
 
+body,
 html {
-    font-size: 15px;
+    background: #f0f2f5;
+}
+
+body,
+input,
+textarea,
+button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
 }
 
 .container {
     max-width: 1120px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 3rem 1rem 3rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
 }
 
 .react-modal-overlay {
@@ -32,8 +53,8 @@ html {
 .react-modal-content {
     width: 100%;
     max-width: 576px;
-    background: #fff;
-    padding: 1.5rem;
+    background: #f0f2f5;
+    padding: 3rem;
     position: relative;
     border-radius: 0.25rem;
 }
@@ -56,5 +77,37 @@ html {
     &:hover {
         filter: brightness(0.9);
         transition: all .3s ease;
+    }
+}
+
+table {
+
+    width: 100%;
+    border-spacing: 0 0.5rem;
+    font-size: 17px;
+
+    th {
+        color: #969cb3;
+        font-weight: 400;
+        padding: 1rem 2rem;
+        text-align: left;
+        line-height: 1.5rem;
+    }
+
+    td {
+        padding: 1rem 2rem;
+        border: 0;
+        background: #fff;
+        color: #969cb3;
+        font-weight: 400;
+
+        &:first-child {
+            color: #363f5f;
+            border-radius: 0.25rem 0 0 0.25rem;
+        }
+
+        &:last-child {
+            border-radius: 0 0.25rem 0.25rem 0;
+        }
     }
 }

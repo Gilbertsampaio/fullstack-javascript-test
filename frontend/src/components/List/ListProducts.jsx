@@ -8,11 +8,23 @@ export default function ListProducts() {
     const { products } = useProducts();
 
     return (
-        <div className="listProducts">
-            {products.map(product => (
-                <CardProduct key={product.id} product={product} />
-            ))}
-        </div>
+        <main>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Preço</th>
+                        <th>Descrição</th>
+                        <th>Opção</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {products.map(product => (
+                        <CardProduct key={product.id} product={product} />
+                    ))}
+                </tbody>
+            </table>
+        </main>
     )
 
 }

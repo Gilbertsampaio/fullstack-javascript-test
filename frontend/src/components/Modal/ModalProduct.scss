@@ -9,11 +9,39 @@
         gap: .5rem;
     }
 
+    input {
+        height: 4rem;
+    }
+
+    textarea {
+        padding-top: 20px !important;
+    }
+
     input, textarea {
+        width: 100%;
+        padding: 0 1.5rem;
+        border-radius: 0.25rem;
+        border: 1px solid #d7d7d7;
+        background: #e7e9ee;
+        font-weight: 400;
         font-size: 1rem;
-        padding: .5rem;
-        border-radius: .25rem;
-        border: 1px solid #e1e1e1;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        padding: 0 1.5rem;
+        height: 4rem;
+        color: #fff;
+        border-radius: 0.5rem;
+        border: 0;
+        font-size: 1rem;
+        font-weight: 600;
+        margin-top: 1.5rem;
+        transition: all .3s ease;
+        
+        &:hover {
+            transition: all .3s ease;
+        }
     }
 
 }

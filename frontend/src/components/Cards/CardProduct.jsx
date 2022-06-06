@@ -14,33 +14,35 @@ export function CardProduct({ product }) {
     }
 
     return (
-        <div key={product.id} className="product">
-            <div className="details">
-                <span className="name">{product.name}</span>
-                <span className="description">{product.description}</span>
-                <span className="price">
-                    {new Intl.NumberFormat('pt-BR', {
-                        style: 'currency',
-                        currency: 'BRL'
-                    }).format(product.price)}
-                </span>
-            </div>
-            <div className="actions">
-                <button
-                    title="Editar"
-                    onClick={() => handleOpenModalProduct(product.id)}
-                >
-                    <FiEdit />
-                </button>
-                <button
-                    title="Excluir"
-                    className="deleteProduct"
-                    onClick={() => { if (window.confirm(`Deseja mesmo excluir o produto ${product.name}?`)) { handleDeleteProduct(product.id) } }}
-                >
-                    <FiTrash2 />
-                </button>
-            </div>
-        </div>
+        <tr key={product.id} className="product">
+            <td>{product.name}</td>
+            <td>
+                {new Intl.NumberFormat('pt-BR', {
+                    style: 'currency',
+                    currency: 'BRL'
+                }).format(product.price)}
+            </td>
+            <td>{product.description}</td>
+            <td>
+                <div className="actions">
+                    <button
+                        title="Editar"
+                        onClick={() => handleOpenModalProduct(product.id)}
+                    >
+                        <FiEdit />
+                    </button>
+                    <button
+                        title="Excluir"
+                        className="deleteProduct"
+                        onClick={() => { if (window.confirm(`Deseja mesmo excluir o produto ${product.name}?`)) { handleDeleteProduct(product.id) } }}
+                    >
+                        <FiTrash2 />
+                    </button>
+                </div>
+            </td>
+        </tr>
+
+
     )
 
 }
