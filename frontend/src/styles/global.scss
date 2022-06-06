@@ -40,15 +40,21 @@ html {
 
 .react-modal-close {
     position: absolute;
-    right: 1.5rem;
-    top: 1.5rem;
+    right: 0rem;
+    top: 0rem;
     border: 0;
-    background: transparent;
+    background: #2980b9;
     transition: filter 0.2s;
     cursor: pointer;
     font-size: 1.25rem;
+    color: #fff;
+    padding: 10px 10px 5px;
+    border-radius: 0px 2px 0 10px;
+    cursor: pointer;
+    transition: all .3s ease;
 
     &:hover {
         filter: brightness(0.9);
+        transition: all .3s ease;
     }
 }

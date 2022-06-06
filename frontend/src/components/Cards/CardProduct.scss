@@ -5,6 +5,14 @@
     padding: 1rem;
     border-radius: .25rem;
     background-color: #F2F3F4;
+    transition: all .3s ease;
+    cursor: pointer;
+    box-shadow: 3px 3px 3px #ccc;
+
+    &:hover {
+        background-color: #e8e1e1;
+        transition: all .3s ease;
+    }
 
     .details {
         display: flex;
@@ -13,11 +21,20 @@
 
         .name {
             font-size: 1.25rem;
+            font-weight: 400;
+            color: #1e4bb6;
+            text-transform: uppercase;
+        }
+
+        .description {
+            color: #888;
+            font-style: italic;
         }
 
         .price {
             margin-top: .5rem;
             font-weight: 700;
+            color: #072365;
         }
 
     }
@@ -32,9 +49,10 @@
             border: none;
             font-size: 1.5rem;
             transition: filter 0.2s;
+            color: #1e4bb6;
 
             &:hover {
-                filter: brightness(0.9);
+                filter: brightness(0.7);
             }
         }
 
