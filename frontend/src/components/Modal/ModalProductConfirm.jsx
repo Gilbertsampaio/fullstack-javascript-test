@@ -3,8 +3,8 @@ import { FiX } from "react-icons/fi";
 import Modal from "react-modal";
 import { useModal } from "../../hooks/useModal";
 import { useProducts } from "../../hooks/useProducts";
-import { PrimaryButton } from "../Button/PrimaryButton";
-import { SecundaryButton } from "../Button/SecundaryButton";
+import { ModalButton } from "../Button/ModalButton";
+import { DangerButton } from "../Button/DangerButton";
 
 import "./ModalProduct.scss";
 
@@ -57,14 +57,14 @@ export function ModalProductConfirm() {
                 <div className="form-group">Deseja mesmo excluir o produto <b>{name}</b>?</div>
                 <div className="modalConfirm">
                     <div>
-                        <SecundaryButton type="reset"
+                        <ModalButton className="primaryButton" type="reset"
                             onClick={handleCloseModalProductConfirm}
                         >
                             Cancelar
-                        </SecundaryButton>
+                        </ModalButton>
                     </div>
                     <div>
-                        <PrimaryButton type="submit">Excluir</PrimaryButton>
+                        <DangerButton type="submit">Excluir</DangerButton>
                     </div>
                 </div>
             </form>

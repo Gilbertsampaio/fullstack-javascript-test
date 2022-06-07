@@ -78,6 +78,10 @@ button {
         filter: brightness(0.9);
         transition: all .3s ease;
     }
+
+    &.add {
+        background: #33cc95;
+    }
 }
 
 table {

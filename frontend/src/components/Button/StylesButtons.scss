@@ -16,8 +16,8 @@
     }
 }
 
-.secundaryButton {
-    background: #2980B9;
+.successButton {
+    background: #33cc95;
     color: #fff;
     border: none;
     border-radius: .15rem;
@@ -28,7 +28,25 @@
     transition: all .3s ease;
 
     &:hover {
-        background: #0f476d;
+        background: #198b61;
+        transition: all .3s ease;
+        /*filter: brightness(0.9);*/
+    }
+}
+
+.dangerButton {
+    background: #b92935;
+    color: #fff;
+    border: none;
+    border-radius: .15rem;
+    padding: .75rem 1.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: filter 0.2s;
+    transition: all .3s ease;
+
+    &:hover {
+        background: #871721;
         transition: all .3s ease;
         /*filter: brightness(0.9);*/
     }

@@ -35,8 +35,5 @@ export function CardProduct({ product }) {
                 </div>
             </td>
         </tr>
-
-
     )
-
 }

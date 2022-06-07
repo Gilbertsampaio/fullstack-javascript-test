@@ -1,7 +1,7 @@
 import { FiPlus } from "react-icons/fi";
 import { useModal } from "../hooks/useModal";
 import { useProducts } from "../hooks/useProducts";
-import { PrimaryButton } from "./Button/PrimaryButton";
+import { ModalButton } from "./Button/ModalButton";
 
 import "./Header.scss";
 
@@ -13,12 +13,12 @@ export function Header() {
         <header>
             <div className="container">
             <h1>Produtos <span>({products.length <= 9 ? '0'+products.length : products.length})</span></h1>
-            <PrimaryButton
+            <ModalButton className="primaryButton"
                 onClick={() => handleOpenModalProduct(null, 0)}
             >
                 <FiPlus />
                 Adicionar produto
-            </PrimaryButton>
+            </ModalButton>
             </div>
         </header>
     )
