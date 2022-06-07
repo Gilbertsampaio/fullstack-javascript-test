@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FiX } from "react-icons/fi";
+import { FiEdit, FiEdit2, FiPlus, FiX } from "react-icons/fi";
 import Modal from "react-modal";
 import { useModal } from "../../hooks/useModal";
 import { useProducts } from "../../hooks/useProducts";
@@ -18,6 +18,8 @@ export function ModalProduct() {
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState("");
+
+    const icone = id ? <FiEdit /> : <FiPlus />;
 
     async function handleFormProduct(event) {
         event.preventDefault();
@@ -75,7 +77,7 @@ export function ModalProduct() {
             </button>
 
             <form className="formProduct" onSubmit={handleFormProduct}>
-                <h2>{id ? "Editar" : "Cadastrar"} Produto</h2>
+                <h2>{icone} {id ? "Editar" : "Cadastrar"} Produto</h2>
 
                 <div className="form-group">
                     <input

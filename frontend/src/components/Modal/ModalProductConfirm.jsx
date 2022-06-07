@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FiX } from "react-icons/fi";
+import { FiTrash, FiTrash2, FiX } from "react-icons/fi";
 import Modal from "react-modal";
 import { useModal } from "../../hooks/useModal";
 import { useProducts } from "../../hooks/useProducts";
@@ -46,13 +46,13 @@ export function ModalProductConfirm() {
             <button
                 type="button"
                 onClick={handleCloseModalProductConfirm}
-                className="react-modal-close"
+                className="react-modal-close del"
             >
                 <FiX />
             </button>
 
             <form className="formProduct" onSubmit={handleFormProductConfirm}>
-                <h2>Excluir Produto</h2>
+                <h2><FiTrash2 /> Excluir Produto</h2>
 
                 <div className="form-group">Deseja mesmo excluir o produto <b>{name}</b>?</div>
                 <div className="modalConfirm">
