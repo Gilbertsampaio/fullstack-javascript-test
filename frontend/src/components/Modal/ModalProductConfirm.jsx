@@ -57,7 +57,7 @@ export function ModalProductConfirm() {
                 <div className="form-group">Deseja mesmo excluir o produto <b>{name}</b>?</div>
                 <div className="modalConfirm">
                     <div>
-                        <ModalButton className="primaryButton" type="reset"
+                        <ModalButton className="secundaryButton" type="reset"
                             onClick={handleCloseModalProductConfirm}
                         >
                             Cancelar

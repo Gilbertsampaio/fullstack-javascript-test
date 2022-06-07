@@ -52,22 +52,12 @@
         &:first-child {
             button {
                 width: 95% !important;
-                background: #2980B9;
-
-                &:hover {
-                    background: #0f476d;
-                }
             }
         }
 
         &:last-child {
             button {
                 width: 100% !important;
-                background: #b92930;
-
-                &:hover {
-                    background: #89191e;
-                }
             }
         }
     }
