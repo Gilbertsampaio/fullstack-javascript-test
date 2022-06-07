@@ -6,7 +6,7 @@ import "./CardProduct.scss";
 export function CardProduct({ product }) {
 
     const { handleOpenModalProduct } = useModal();
-
+    
     return (
         <tr key={product.id} className="product">
             <td>{product.name}</td>
