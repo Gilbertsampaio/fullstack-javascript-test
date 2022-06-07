@@ -4,6 +4,7 @@ import Modal from "react-modal";
 import { useModal } from "../../hooks/useModal";
 import { useProducts } from "../../hooks/useProducts";
 import { ModalButton } from "../Button/ModalButton";
+import cogoToast from "cogo-toast";
 
 import "./ModalProduct.scss";
 
@@ -11,15 +12,68 @@ Modal.setAppElement('*');
 
 export function ModalProduct() {
     const { products, createProduct, updateProduct } = useProducts();
-
     const { idEditableProduct, isModalProductOpen, handleCloseModalProduct } = useModal();
-
     const [id, setId] = useState(null);
     const [name, setName] = useState("");
     const [description, setDescription] = useState("");
     const [price, setPrice] = useState("");
 
     const icone = id ? <FiEdit /> : <FiPlus />;
+    let tipoAlerta = "";
+    let msg = "";
+
+    const handleClick = (tipoAlerta) => {
+
+        let options = {}
+
+        switch (tipoAlerta) {
+
+            case "primary":
+                msg = 'Registro alterado com sucesso';
+                options = {
+                    'heading': 'Editar registro'
+                }
+                cogoToast.info(msg, options);
+                break;
+
+            case "success":
+                msg = 'Registro cadastrado com sucesso';
+                options = {
+                    'heading': 'Cadastrar registro'
+                }
+                cogoToast.success(msg, options);
+                break;
+
+            case "danger":
+                msg = 'Registro removido com sucesso';
+                options = {
+                    'heading': 'Excluir registro'
+                }
+                cogoToast.error(msg, options);
+                break;
+
+            case "warning":
+                msg = 'Erro ao executar ação';
+                options = {
+                    'heading': 'Atenção'
+                }
+                cogoToast.warn(msg, options);
+                break;
+
+            case "loading":
+                msg = 'Carregando informação...';
+                options = {
+                    'heading': 'Aguarde'
+                }
+                cogoToast.loading(msg, options);
+                break;
+
+            default:
+                break;
+        }
+
+    };
+
 
     async function handleFormProduct(event) {
         event.preventDefault();
@@ -30,14 +84,21 @@ export function ModalProduct() {
                 description,
                 price
             });
+
+            tipoAlerta = 'primary';
+
         } else {
             await createProduct({
                 name,
                 description,
                 price
             });
+
+            tipoAlerta = 'success';
+
         }
 
+        handleClick(tipoAlerta);
         setName("");
         setDescription("");
         setPrice("");

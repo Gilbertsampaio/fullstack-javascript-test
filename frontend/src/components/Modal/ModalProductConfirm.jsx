@@ -5,6 +5,7 @@ import { useModal } from "../../hooks/useModal";
 import { useProducts } from "../../hooks/useProducts";
 import { ModalButton } from "../Button/ModalButton";
 import { DangerButton } from "../Button/DangerButton";
+import cogoToast from "cogo-toast";
 
 import "./ModalProduct.scss";
 
@@ -12,16 +13,24 @@ Modal.setAppElement('*');
 
 export function ModalProductConfirm() {
     const { products, removeProduct } = useProducts();
-
-    async function handleDeleteProduct(id) {
-        await removeProduct(id);
-    }
-
     const { idEditableProduct, isModalProductConfirmOpen, handleCloseModalProductConfirm } = useModal();
-
     const [id, setId] = useState(null);
     const [name, setName] = useState("");
+    let msg = "";
+    let options = {}
 
+    async function handleDeleteProduct(id) {
+        const response = await removeProduct(id);
+        handleClick(response.status, response.message);
+    }
+
+    const handleClick = (code, message) => {
+        msg = code === 201 ? message : message;
+        options = {
+            'heading': 'Excluir registro'
+        }
+        cogoToast.error(msg, options);
+    };
 
     async function handleFormProductConfirm(event) {
         event.preventDefault();

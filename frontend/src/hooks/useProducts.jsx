@@ -23,8 +23,12 @@ export function ProductsProvider({children}) {
     }
 
     async function removeProduct(id) {
-        await api.delete(`/product/${id}`);
+        const response = await api.delete(`/product/${id}`);
         getProducts();
+        return {
+            message: response.data.message,
+            status:  response.status
+        };
     }
 
     async function updateProduct(id, data) {

@@ -22,12 +22,12 @@ export default function ListProducts() {
                     {products.map(product => (
                         <CardProduct key={product.id} product={product} />
                     ))}
-                    <tr className={products.length === 0 ? 'product' : 'product d-none'}>
+                    {products.length === 0 && <tr className="product">
                         <td colSpan={5} className="center">Não existem produtos cadastrados</td>
                     </tr>
+                    }
                 </tbody>
             </table>
         </main>
     )
-
 }

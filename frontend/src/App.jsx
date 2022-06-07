@@ -10,14 +10,14 @@ function App() {
 
 	return (
 		<ModalProvider>
-			<ProductsProvider>
-				<Header />
-				<ListProducts />
-				<Footer />
-				<ModalProduct />
-				<ModalProductConfirm />
-			</ProductsProvider>
-		</ModalProvider>
+				<ProductsProvider>
+					<Header />
+					<ListProducts />
+					<Footer />
+					<ModalProduct />
+					<ModalProductConfirm />
+				</ProductsProvider>
+			</ModalProvider>
 	);
 }
 
