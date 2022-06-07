@@ -1,17 +1,11 @@
 import { FiEdit, FiTrash2 } from "react-icons/fi";
 import { useModal } from "../../hooks/useModal";
-import { useProducts } from "../../hooks/useProducts";
 
 import "./CardProduct.scss";
 
 export function CardProduct({ product }) {
 
-    const { removeProduct } = useProducts();
     const { handleOpenModalProduct } = useModal();
-
-    async function handleDeleteProduct(id) {
-        await removeProduct(id);
-    }
 
     return (
         <tr key={product.id} className="product">
@@ -27,14 +21,14 @@ export function CardProduct({ product }) {
                 <div className="actions">
                     <button
                         title="Editar"
-                        onClick={() => handleOpenModalProduct(product.id)}
+                        onClick={() => handleOpenModalProduct(product.id, 0)}
                     >
                         <FiEdit />
                     </button>
                     <button
                         title="Excluir"
                         className="deleteProduct"
-                        onClick={() => { if (window.confirm(`Deseja mesmo excluir o produto ${product.name}?`)) { handleDeleteProduct(product.id) } }}
+                        onClick={() => handleOpenModalProduct(product.id, 1)}
                     >
                         <FiTrash2 />
                     </button>

@@ -14,7 +14,7 @@ export function Header() {
             <div className="container">
             <h1>Produtos <span>({products.length <= 9 ? '0'+products.length : products.length})</span></h1>
             <PrimaryButton
-                onClick={() => handleOpenModalProduct()}
+                onClick={() => handleOpenModalProduct(null, 0)}
             >
                 <FiPlus />
                 Adicionar produto
