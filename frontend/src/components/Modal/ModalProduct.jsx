@@ -24,47 +24,49 @@ export function ModalProduct() {
 
     const handleClick = (tipoAlerta) => {
 
-        let options = {}
+        const options = {
+            'hideAfter': 5,
+            'position': 'top-right',
+            'bar': {
+                size: '5px', 
+                style: 'solid'
+            }
+        }
 
         switch (tipoAlerta) {
 
             case "primary":
                 msg = 'Registro alterado com sucesso';
-                options = {
-                    'heading': 'Editar registro'
-                }
+                options['heading'] = 'Editar registro';
+                options['bar']['color'] = '#2980B9';
                 cogoToast.info(msg, options);
                 break;
 
             case "success":
                 msg = 'Registro cadastrado com sucesso';
-                options = {
-                    'heading': 'Cadastrar registro'
-                }
+                options['heading'] = 'Cadastrar registro';
+                options['bar']['color'] = '#33cc95';
                 cogoToast.success(msg, options);
                 break;
 
             case "danger":
                 msg = 'Registro removido com sucesso';
-                options = {
-                    'heading': 'Excluir registro'
-                }
+                options['heading'] = 'Excluir registro';
+                options['bar']['color'] = '#b92935';
                 cogoToast.error(msg, options);
                 break;
 
             case "warning":
                 msg = 'Erro ao executar ação';
-                options = {
-                    'heading': 'Atenção'
-                }
+                options['heading'] = 'Atenção';
+                options['bar']['color'] = '#ffcc00';
                 cogoToast.warn(msg, options);
                 break;
 
             case "loading":
                 msg = 'Carregando informação...';
-                options = {
-                    'heading': 'Aguarde'
-                }
+                options['heading'] = 'Aguarda';
+                options['bar']['color'] = '#000';
                 cogoToast.loading(msg, options);
                 break;
 

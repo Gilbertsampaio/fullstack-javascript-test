@@ -25,10 +25,19 @@ export function ModalProductConfirm() {
     }
 
     const handleClick = (code, message) => {
-        msg = code === 201 ? message : message;
-        options = {
-            'heading': 'Excluir registro'
+
+        const options = {
+            'hideAfter': 5,
+            'position': 'top-right',
+            'bar': {
+                size: '5px',
+                style: 'solid'
+            }
         }
+
+        msg = code === 201 ? message : message;
+        options['heading'] = 'Excluir registro';
+        options['bar']['color'] = '#b92935';
         cogoToast.error(msg, options);
     };
 

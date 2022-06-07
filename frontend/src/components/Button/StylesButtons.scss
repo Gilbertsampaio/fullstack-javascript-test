@@ -69,3 +69,94 @@
         /*filter: brightness(0.9);*/
     }
 }
+
+.warningButton {
+    background: #ffcc00;
+    color: #000;
+    border: none;
+    border-radius: .15rem;
+    padding: .75rem 1.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: filter 0.2s;
+    transition: all .3s ease;
+
+    &:hover {
+        background: #86701a;
+        transition: all .3s ease;
+        /*filter: brightness(0.9);*/
+    }
+}
+
+.loadingButton {
+    background: #000;
+    color: #fff;
+    border: none;
+    border-radius: .15rem;
+    padding: .75rem 1.25rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: filter 0.2s;
+    transition: all .3s ease;
+
+    &:hover {
+        background: #333;
+        transition: all .3s ease;
+        /*filter: brightness(0.9);*/
+    }
+}
+
+.ct-toast {
+    svg {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+.ct-toast-success {
+    svg {
+        path {
+            fill: #33cc95;
+        }
+    }
+}
+
+.ct-toast-primary {
+    svg {
+        path {
+            fill: #2980B9;
+        }
+    }
+}
+
+.ct-toast-error {
+    svg {
+        path {
+            fill: #b92935;
+        }
+    }
+}
+
+.ct-toast-secundary {
+    svg {
+        path {
+            fill: #ccc;
+        }
+    }
+}
+
+.ct-toast-warning {
+    svg {
+        path {
+            fill: #ffcc00;
+        }
+    }
+}
+
+.ct-toast-loading {
+    svg {
+        path {
+            fill: #000;
+        }
+    }
+}
