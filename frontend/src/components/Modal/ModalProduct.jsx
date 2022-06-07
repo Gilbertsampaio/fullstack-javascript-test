@@ -4,20 +4,15 @@ import Modal from "react-modal";
 import { useModal } from "../../hooks/useModal";
 import { useProducts } from "../../hooks/useProducts";
 import { PrimaryButton } from "../Button/PrimaryButton";
-import { SecundaryButton } from "../Button/SecundaryButton";
 
 import "./ModalProduct.scss";
 
 Modal.setAppElement('*');
 
 export function ModalProduct() {
-    const { products, createProduct, updateProduct, removeProduct } = useProducts();
+    const { products, createProduct, updateProduct } = useProducts();
 
-    async function handleDeleteProduct(id) {
-        await removeProduct(id);
-    }
-
-    const { idEditableProduct, isModalProductOpen, handleCloseModalProduct, isModalProductConfirmOpen, handleCloseModalProductConfirm } = useModal();
+    const { idEditableProduct, isModalProductOpen, handleCloseModalProduct, isModalProductConfirmOpen } = useModal();
 
     const [id, setId] = useState(null);
     const [name, setName] = useState("");
@@ -48,14 +43,6 @@ export function ModalProduct() {
         handleCloseModalProduct();
     }
 
-    async function handleFormProductConfirm(event) {
-        event.preventDefault();
-        handleDeleteProduct(id);
-        handleCloseModalProductConfirm();
-    }
-
-
-
     function handleOnAfterOpen() {
         if (idEditableProduct) {
             const { id, name, description, price } = products.find(p => p.id === idEditableProduct);
@@ -71,45 +58,7 @@ export function ModalProduct() {
         }
     }
 
-    if (isModalProductConfirmOpen) {
-
-        return (
-            <Modal
-                isOpen={isModalProductConfirmOpen}
-                onRequestClose={handleCloseModalProductConfirm}
-                overlayClassName="react-modal-overlay"
-                className="react-modal-content"
-                onAfterOpen={handleOnAfterOpen}
-            >
-                <button
-                    type="button"
-                    onClick={handleCloseModalProductConfirm}
-                    className="react-modal-close"
-                >
-                    <FiX />
-                </button>
-
-                <form className="formProduct" onSubmit={handleFormProductConfirm}>
-                    <h2>Excluir Produto</h2>
-
-                    <div className="form-group">Deseja realmente excluir o Produto?</div>
-                    <div className="modalConfirm">
-                        <div>
-                            <SecundaryButton type="reset"
-                                onClick={handleCloseModalProductConfirm}
-                            >
-                                Cancelar
-                            </SecundaryButton>
-                        </div>
-                        <div>
-                            <PrimaryButton type="submit">Excluir</PrimaryButton>
-                        </div>
-                    </div>
-                </form>
-            </Modal>
-        );
-
-    } else {
+    if (!isModalProductConfirmOpen) {
 
         return (
             <Modal
