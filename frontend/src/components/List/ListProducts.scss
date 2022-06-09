@@ -1,7 +1,7 @@
 main {
-    max-width: 1120px;
+    max-width: var(--maxwidth);
     margin: 0 auto 65px;
-    padding: 2.5rem 1rem;
+    padding: 0 1rem 2.5rem 1rem;
 }
 
 .listProducts {

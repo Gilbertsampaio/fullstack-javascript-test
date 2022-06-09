@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
+:root {
+    --maxwidth: 1280px;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -20,9 +24,9 @@ button {
 }
 
 .container {
-    max-width: 1120px;
+    max-width: var(--maxwidth);
     margin: 0 auto;
-    padding: 3rem 1rem 3rem;
+    padding: 1rem;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -35,6 +39,40 @@ button {
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
+
+}
+
+.containerButton {
+
+    margin: 0 auto;
+    padding: 1rem 0rem 3rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+
+    h2 {
+        color: #5429cc;
+    }
+
+    .primaryButton {
+
+        float: right;
+
+        svg {
+            font-size: 1.25rem;
+            margin-right: 5px;
+            margin-bottom: -3px;
+        }
+    }
 }
 
 .react-modal-overlay {
@@ -44,7 +82,6 @@ button {
     bottom: 0;
     right: 0;
     left: 0;
-
     display: flex;
     align-items: center;
     justify-content: center;

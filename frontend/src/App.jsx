@@ -1,3 +1,4 @@
+import { Breadcrumb } from "./components/breadcrumb";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import ListProducts from "./components/List/ListProducts";
@@ -12,6 +13,7 @@ function App() {
 		<ModalProvider>
 			<ProductsProvider>
 				<Header />
+				<Breadcrumb />
 				<ListProducts />
 				<Footer />
 				<ModalProduct />

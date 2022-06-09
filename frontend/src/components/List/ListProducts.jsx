@@ -1,14 +1,32 @@
 import { CardProduct } from "../Cards/CardProduct";
 import { useProducts } from "../../hooks/useProducts";
-
+import { useModal } from "../../hooks/useModal";
+import { ModalButton } from "../Button/ModalButton";
+import { FiPlus } from "react-icons/fi";
 import "./ListProducts.scss";
 
 export default function ListProducts() {
 
     const { products } = useProducts();
+    const { handleOpenModalProduct } = useModal();
 
     return (
         <main>
+            <div className="containerButton">
+                <h2>Lista de Produtos</h2>
+                <ModalButton className="primaryButton"
+                    onClick={() => handleOpenModalProduct(null, 0)}
+                    data-tip="Cadastrar registro"
+                    data-offset="{'top': 0, 'left': 0}"
+                    onMouseLeave={() => {
+                        setTimeout(() => ReactTooltip.hide(), 50);
+                    }}
+                >
+
+                    <FiPlus />
+                    Adicionar produto
+                </ModalButton>
+            </div>
             <table>
                 <thead>
                     <tr>

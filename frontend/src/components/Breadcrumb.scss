@@ -1,0 +1,47 @@
+.boxDescricao {
+
+    margin: 0 auto 50px;
+    padding: 1rem 1rem;
+    background: #5429cc84;
+
+    div {
+        max-width: var(--maxwidth);
+        margin: 0 auto;
+        padding: 0rem 1rem 0rem;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #fff;
+
+        span {
+            color: #fff;
+            font-style: normal;
+            font-weight: normal;
+            float: right;
+            filter: brightness(0.9);
+
+            a {
+                text-decoration: none;
+                color: #5429cc;
+                transition: all .3s ease;
+
+                &:hover {
+                    color: #33cc95;
+                    filter: brightness(0.9);
+                    transition: all .3s ease;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+}

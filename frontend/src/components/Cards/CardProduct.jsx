@@ -22,7 +22,7 @@ export function CardProduct({ product }) {
                 <div className="actions">
                     <button
                         onClick={() => handleOpenModalProduct(product.id, 0)}
-                        data-tip="Cancelar exclusão"
+                        data-tip="Editar registro"
                         data-offset="{'top': 0, 'left': 0}"
                         onMouseLeave={() => {
                             setTimeout(() => ReactTooltip.hide(), 50);
