@@ -2,7 +2,6 @@ import { CardProduct } from "../Cards/CardProduct";
 import { useProducts } from "../../hooks/useProducts";
 import { useModal } from "../../hooks/useModal";
 import { ModalButton } from "../Button/ModalButton";
-import { Breadcrumb } from "../Breadcrumb";
 import { FiPlus } from "react-icons/fi";
 import ReactTooltip from "react-tooltip";
 
@@ -12,12 +11,12 @@ export default function ListProducts() {
 
     const { products } = useProducts();
     const { handleOpenModalProduct } = useModal();
+    const totalProd = products ? products.length <= 9 && products.length !== 0 ? '0' + products.length : products.length : "";
 
     return (
         <>
-            <Breadcrumb pag={"Produto"} totalProd={products} />
             <div className="containerButton">
-                <h2>Lista de Produtos</h2>
+                <h2>Lista de Produtos <span>({totalProd})</span></h2>
                 <ModalButton className="primaryButton"
                     onClick={() => handleOpenModalProduct(null, 0)}
                     data-tip="Cadastrar registro"
@@ -26,7 +25,6 @@ export default function ListProducts() {
                         setTimeout(() => ReactTooltip.hide(), 50);
                     }}
                 >
-
                     <FiPlus />
                     Adicionar produto
                 </ModalButton>

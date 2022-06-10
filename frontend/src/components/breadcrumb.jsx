@@ -1,16 +1,38 @@
 import "./Breadcrumb.scss";
 
+
 export function Breadcrumb(props) {
 
-    const totalProd = props.totalProd ? props.totalProd.length <= 9 && props.totalProd.length !== 0 ? '0' + props.totalProd.length : props.totalProd.length : "";
-    const s = totalProd > 1 ? 's' : '';
-    const tituloPag = props.pag + s;
+    const pagHome = props.pag[0].command;
+    let pagAtual = "";
+
+    if (props.atual.location.pagaberta) {
+        pagAtual = props.atual.location.pagaberta
+    } else {
+        switch (props.atual.location.pathname) {
+            case "/":
+                pagAtual = "Home"
+                break;
+            case "/sobre":
+                pagAtual = "Sobre"
+                break;
+            case "/produtos":
+                pagAtual = "Produtos"
+                break;
+            case "/contato":
+                pagAtual = "Contato"
+                break;
+            default:
+                break;
+        }
+    }
 
     return (
+
         <div className="boxDescricao">
             <div>Administre as informações sobre os produtos
                 <span>
-                    <a href="/">Home</a> / {totalProd} {tituloPag}
+                    <a onClick={pagHome}>Home</a> / {pagAtual}
                 </span>
             </div>
         </div>
