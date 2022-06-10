@@ -1,16 +1,16 @@
-import { useProducts } from "../hooks/useProducts";
 import "./Breadcrumb.scss";
 
-export function Breadcrumb() {
+export function Breadcrumb(props) {
 
-    const { products } = useProducts();
-    const s = products.length > 1 ? 's' : '';
+    const totalProd = props.totalProd ? props.totalProd.length <= 9 && props.totalProd.length !== 0 ? '0' + props.totalProd.length : props.totalProd.length : "";
+    const s = totalProd > 1 ? 's' : '';
+    const tituloPag = props.pag + s;
 
     return (
         <div className="boxDescricao">
-            <div>Administre as informações sobre os produtos 
+            <div>Administre as informações sobre os produtos
                 <span>
-                    <a href="/">Home</a> / {products.length <= 9 && products.length !== 0 ? '0' + products.length : products.length} Produto{s}
+                    <a href="/">Home</a> / {totalProd} {tituloPag}
                 </span>
             </div>
         </div>

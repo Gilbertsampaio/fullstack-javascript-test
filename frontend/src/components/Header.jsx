@@ -1,18 +1,14 @@
-import { FiHome, FiPhone, FiUser } from "react-icons/fi";
+import { Menubar } from "./Menubar";
 import logo from "../img/logo.png";
 import "./Header.scss";
 
-export function Header() {
+export function Header(props) {
 
     return (
         <header>
             <div className="container">
-                <img src={logo} alt="Logo" />
-                <ul>
-                    <li><a href="./"><FiHome /> Home Inicial</a></li>
-                    <li><a href="./"><FiUser /> Conheça-nos</a></li>
-                    <li><a href="./"><FiPhone /> Contatos</a></li>
-                </ul>
+                <a href="./"><img src={logo} alt="Logo" /></a>
+                <Menubar menu={props.itensMenu} />
             </div>
         </header>
     )

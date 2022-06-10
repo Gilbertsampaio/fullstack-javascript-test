@@ -2,7 +2,10 @@ import { CardProduct } from "../Cards/CardProduct";
 import { useProducts } from "../../hooks/useProducts";
 import { useModal } from "../../hooks/useModal";
 import { ModalButton } from "../Button/ModalButton";
+import { Breadcrumb } from "../Breadcrumb";
 import { FiPlus } from "react-icons/fi";
+import ReactTooltip from "react-tooltip";
+
 import "./ListProducts.scss";
 
 export default function ListProducts() {
@@ -11,7 +14,8 @@ export default function ListProducts() {
     const { handleOpenModalProduct } = useModal();
 
     return (
-        <main>
+        <>
+            <Breadcrumb pag={"Produto"} totalProd={products} />
             <div className="containerButton">
                 <h2>Lista de Produtos</h2>
                 <ModalButton className="primaryButton"
@@ -46,6 +50,6 @@ export default function ListProducts() {
                     }
                 </tbody>
             </table>
-        </main>
+        </>
     )
 }

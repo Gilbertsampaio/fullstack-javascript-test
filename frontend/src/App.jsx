@@ -1,26 +1,49 @@
-import { Breadcrumb } from "./components/breadcrumb";
-import { Footer } from "./components/Footer";
+import React, { Component } from 'react';
 import { Header } from "./components/Header";
-import ListProducts from "./components/List/ListProducts";
-import { ModalProduct } from "./components/Modal/ModalProduct";
-import { ModalProductConfirm } from "./components/Modal/ModalProductConfirm";
-import { ModalProvider } from "./hooks/useModal";
-import { ProductsProvider } from "./hooks/useProducts";
+import { Footer } from "./components/Footer";
+import { withRouter } from 'react-router-dom';
+import { FiBox, FiHome, FiPhone, FiUser } from 'react-icons/fi';
+class App extends Component {
 
-function App() {
+	render() {
 
-	return (
-		<ModalProvider>
-			<ProductsProvider>
-				<Header />
-				<Breadcrumb />
-				<ListProducts />
+		const menuitems = [
+			{
+				label: 'Home',
+				icon: <FiHome />,
+				command: () => this.props.history.push('/')
+			},
+			{
+				label: 'Sobre',
+				icon: <FiUser />,
+				command: () => this.props.history.push('/sobre')
+			},
+			{
+				label: 'Produtos',
+				icon: <FiBox />,
+				command: () => this.props.history.push('/produtos')
+			},
+			{
+				label: 'Contato',
+				icon: <FiPhone />,
+				command: () => this.props.history.push('/contato')
+			}
+		];
+
+		return (
+			<div className="App">
+				<Header itensMenu={menuitems} />
 				<Footer />
-				<ModalProduct />
-				<ModalProductConfirm />
-			</ProductsProvider>
-		</ModalProvider>
-	);
+				<div id="main">
+					<main>
+						<div id="content">
+							{this.props.children}
+						</div>
+					</main>
+				</div>
+			</div>
+		);
+	}
 }
 
-export default App;
+export default withRouter(App);

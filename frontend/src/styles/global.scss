@@ -43,7 +43,7 @@ button {
 }
 
 .containerButton {
-
+    max-width: var(--maxwidth);
     margin: 0 auto;
     padding: 1rem 0rem 3rem;
     display: -webkit-box;
@@ -127,7 +127,9 @@ button {
 
 table {
 
-    width: 100%;
+    min-width: var(--maxwidth);
+    margin: 0 auto;
+    padding: 1rem 0rem 3rem;
     border-spacing: 0 0.5rem;
     font-size: 17px;
 
